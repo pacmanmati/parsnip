@@ -1,0 +1,47 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'parsnip'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=parsnip",
+                    "--package=parsnip"
+                ],
+                "filter": {
+                    "name": "parsnip",
+                    "kind": "bin"
+                }
+            },
+            // "args": ["<<<", "\"<div><h1>Hello</h1><a href=\"/\">Home</a><img src=\"/dog.png\" /></div>\""],
+            // "args": ["<", "test.html"],
+            "stdio": "test.html",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'parsnip'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=parsnip",
+                    "--package=parsnip"
+                ],
+                "filter": {
+                    "name": "parsnip",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
